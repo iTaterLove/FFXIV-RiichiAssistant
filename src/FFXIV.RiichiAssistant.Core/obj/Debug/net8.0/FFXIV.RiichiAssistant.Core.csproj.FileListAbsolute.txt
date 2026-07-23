@@ -1,0 +1,12 @@
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\bin\Debug\net8.0\FFXIV.RiichiAssistant.Core.deps.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\bin\Debug\net8.0\FFXIV.RiichiAssistant.Core.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\bin\Debug\net8.0\FFXIV.RiichiAssistant.Core.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.AssemblyInfoInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.AssemblyInfo.cs
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.csproj.CoreCompileInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.sourcelink.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\refint\FFXIV.RiichiAssistant.Core.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\FFXIV.RiichiAssistant.Core.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Core\obj\Debug\net8.0\ref\FFXIV.RiichiAssistant.Core.dll

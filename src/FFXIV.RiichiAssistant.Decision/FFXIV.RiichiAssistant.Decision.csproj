@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\FFXIV.RiichiAssistant.Core\FFXIV.RiichiAssistant.Core.csproj" />
+    <ProjectReference Include="..\FFXIV.RiichiAssistant.Riichi\FFXIV.RiichiAssistant.Riichi.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

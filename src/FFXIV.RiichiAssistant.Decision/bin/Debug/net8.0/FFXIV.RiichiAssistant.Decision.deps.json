@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FFXIV.RiichiAssistant.Decision/1.0.0": {
+        "dependencies": {
+          "FFXIV.RiichiAssistant.Core": "1.0.0",
+          "FFXIV.RiichiAssistant.Riichi": "1.0.0"
+        },
+        "runtime": {
+          "FFXIV.RiichiAssistant.Decision.dll": {}
+        }
+      },
+      "FFXIV.RiichiAssistant.Core/1.0.0": {
+        "runtime": {
+          "FFXIV.RiichiAssistant.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+        "dependencies": {
+          "FFXIV.RiichiAssistant.Core": "1.0.0"
+        },
+        "runtime": {
+          "FFXIV.RiichiAssistant.Riichi.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FFXIV.RiichiAssistant.Decision/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FFXIV.RiichiAssistant.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
