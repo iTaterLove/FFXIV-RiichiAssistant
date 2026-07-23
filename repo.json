@@ -1,0 +1,30 @@
+[
+  {
+    "Author": "iTaterLove",
+    "Name": "FFXIV Riichi Assistant",
+    "InternalName": "FFXIVRiichiAssistant",
+    "AssemblyVersion": "0.0.1.0",
+    "Description": "Riichi Mahjong assistant for FFXIV using Dalamud: discard suggestions, call recommendations, and dora-aware scoring support.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/iTaterLove/FFXIV-RiichiAssistant",
+    "Tags": [
+      "mahjong",
+      "riichi",
+      "assistant",
+      "overlay"
+    ],
+    "IsTestingExclusive": true,
+    "DownloadLinkInstall": "https://github.com/iTaterLove/FFXIV-RiichiAssistant/releases/download/v0.0.1/FFXIVRiichiAssistant.zip",
+    "DownloadLinkTesting": "https://github.com/iTaterLove/FFXIV-RiichiAssistant/releases/download/v0.0.1/FFXIVRiichiAssistant.zip",
+    "DownloadLinkUpdate": "https://github.com/iTaterLove/FFXIV-RiichiAssistant/releases/download/v0.0.1/FFXIVRiichiAssistant.zip",
+    "DalamudApiLevel": 10,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": true,
+    "LoadPriority": 0,
+    "ImageUrls": [],
+    "IconUrl": "",
+    "Punchline": "Riichi decision support in FFXIV Mahjong.",
+    "AcceptsFeedback": true
+  }
+]
