@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "FFXIV.RiichiAssistant.Core/1.0.0": {
+      "FFXIV.RiichiAssistant.Core/0.0.1.0": {
         "runtime": {
           "FFXIV.RiichiAssistant.Core.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "FFXIV.RiichiAssistant.Core/1.0.0": {
+    "FFXIV.RiichiAssistant.Core/0.0.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("FFXIVRiichiAssistant")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02b4d33fba08c2959c214d2d0da5c738bc4ceb53")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.1.0+4acebfe45f6e8eb39cba52a3c321ea16e78a5320")]
 [assembly: System.Reflection.AssemblyProductAttribute("FFXIVRiichiAssistant")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FFXIVRiichiAssistant")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("0.0.1.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

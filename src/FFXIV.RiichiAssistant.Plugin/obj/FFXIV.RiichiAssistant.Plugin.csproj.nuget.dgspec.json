@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Core\\FFXIV.RiichiAssistant.Core.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Core\\FFXIV.RiichiAssistant.Core.csproj",
         "projectName": "FFXIV.RiichiAssistant.Core",
@@ -84,7 +84,7 @@
       }
     },
     "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Decision\\FFXIV.RiichiAssistant.Decision.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Decision\\FFXIV.RiichiAssistant.Decision.csproj",
         "projectName": "FFXIV.RiichiAssistant.Decision",
@@ -170,7 +170,7 @@
       }
     },
     "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Plugin\\FFXIV.RiichiAssistant.Plugin.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Plugin\\FFXIV.RiichiAssistant.Plugin.csproj",
         "projectName": "FFXIVRiichiAssistant",
@@ -519,7 +519,7 @@
       }
     },
     "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Riichi\\FFXIV.RiichiAssistant.Riichi.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.1",
       "restore": {
         "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Riichi\\FFXIV.RiichiAssistant.Riichi.csproj",
         "projectName": "FFXIV.RiichiAssistant.Riichi",

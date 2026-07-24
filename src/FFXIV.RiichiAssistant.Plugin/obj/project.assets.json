@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0-windows7.0": {
-      "FFXIV.RiichiAssistant.Core/1.0.0": {
+      "FFXIV.RiichiAssistant.Core/0.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
@@ -12,12 +12,12 @@
           "bin/placeholder/FFXIV.RiichiAssistant.Core.dll": {}
         }
       },
-      "FFXIV.RiichiAssistant.Decision/1.0.0": {
+      "FFXIV.RiichiAssistant.Decision/0.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "FFXIV.RiichiAssistant.Core": "1.0.0",
-          "FFXIV.RiichiAssistant.Riichi": "1.0.0"
+          "FFXIV.RiichiAssistant.Core": "0.0.1",
+          "FFXIV.RiichiAssistant.Riichi": "0.0.1"
         },
         "compile": {
           "bin/placeholder/FFXIV.RiichiAssistant.Decision.dll": {}
@@ -26,11 +26,11 @@
           "bin/placeholder/FFXIV.RiichiAssistant.Decision.dll": {}
         }
       },
-      "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+      "FFXIV.RiichiAssistant.Riichi/0.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "FFXIV.RiichiAssistant.Core": "1.0.0"
+          "FFXIV.RiichiAssistant.Core": "0.0.1"
         },
         "compile": {
           "bin/placeholder/FFXIV.RiichiAssistant.Riichi.dll": {}
@@ -42,17 +42,17 @@
     }
   },
   "libraries": {
-    "FFXIV.RiichiAssistant.Core/1.0.0": {
+    "FFXIV.RiichiAssistant.Core/0.0.1": {
       "type": "project",
       "path": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj",
       "msbuildProject": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj"
     },
-    "FFXIV.RiichiAssistant.Decision/1.0.0": {
+    "FFXIV.RiichiAssistant.Decision/0.0.1": {
       "type": "project",
       "path": "../FFXIV.RiichiAssistant.Decision/FFXIV.RiichiAssistant.Decision.csproj",
       "msbuildProject": "../FFXIV.RiichiAssistant.Decision/FFXIV.RiichiAssistant.Decision.csproj"
     },
-    "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+    "FFXIV.RiichiAssistant.Riichi/0.0.1": {
       "type": "project",
       "path": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj",
       "msbuildProject": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj"
@@ -60,9 +60,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-windows7.0": [
-      "FFXIV.RiichiAssistant.Core >= 1.0.0",
-      "FFXIV.RiichiAssistant.Decision >= 1.0.0",
-      "FFXIV.RiichiAssistant.Riichi >= 1.0.0"
+      "FFXIV.RiichiAssistant.Core >= 0.0.1",
+      "FFXIV.RiichiAssistant.Decision >= 0.0.1",
+      "FFXIV.RiichiAssistant.Riichi >= 0.0.1"
     ]
   },
   "packageFolders": {
@@ -70,7 +70,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.0.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Plugin\\FFXIV.RiichiAssistant.Plugin.csproj",
       "projectName": "FFXIVRiichiAssistant",
