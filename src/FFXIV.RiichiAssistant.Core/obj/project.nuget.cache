@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "tcZfYarT5pM=",
+  "dgSpecHash": "hTJot3eBj2s=",
   "success": true,
   "projectFilePath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Core\\FFXIV.RiichiAssistant.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Aiden Carter\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Aiden Carter\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Aiden Carter\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
   "logs": []
 }

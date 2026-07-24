@@ -27,13 +27,33 @@ After this repo is public and committed:
 Add that URL in Dalamud:
 `Settings -> Experimental -> Custom Plugin Repositories`
 
-## Repository Layout (initial)
+## Repository Layout
 
 - `repo.json` — Dalamud custom repo index
-- `src/FFXIV.RiichiAssistant/` — plugin project scaffold (to be added)
+- `src/FFXIV.RiichiAssistant.Plugin/` — Dalamud plugin scaffold and Mahjong state integration
 - `artifacts/` — release zip artifacts (or GitHub Releases assets)
+- `build/Package-Plugin.ps1` — repo-local packaging script that emits a Dalamud-ready zip into `artifacts/`
 - `docs/` — implementation notes and roadmap
 
 ## Status
 
-Scaffold in progress.
+Core, riichi-analysis, decision, and plugin scaffold projects are in place. The plugin project now includes a minimal Dalamud entrypoint that polls Mahjong UI state and feeds the analysis/recommendation pipeline.
+
+## Manual Testing
+
+The plugin exposes a minimal in-game debug window for the current normalized Mahjong state.
+
+- Slash command: `/riichiassistant`
+- Dalamud main/config open hooks also open the same debug window.
+- The panel now includes per-player score/riichi/discard rows and a live manual call recommendation preview.
+
+## Packaging
+
+Build and package the plugin zip from the repo root with:
+
+```powershell
+.\build\Package-Plugin.ps1
+```
+
+The script publishes the plugin project, writes a minimal plugin manifest alongside the binaries, and creates `artifacts/FFXIVRiichiAssistant.zip`.
+If `C:\Users\<you>\.dotnet\dotnet.exe` exists, the script prefers that local SDK automatically.

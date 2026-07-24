@@ -1,5 +1,6 @@
 using Dalamud.Plugin.Services;
 using FFXIV.RiichiAssistant.Core;
+using FFXIV.RiichiAssistant.Riichi;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 

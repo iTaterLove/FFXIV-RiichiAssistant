@@ -1,0 +1,6 @@
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.csproj.AssemblyReference.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.AssemblyInfoInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.AssemblyInfo.cs
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.csproj.CoreCompileInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Plugin\obj\--info\net10.0-windows\FFXIV.RiichiAssistant.Plugin.sourcelink.json

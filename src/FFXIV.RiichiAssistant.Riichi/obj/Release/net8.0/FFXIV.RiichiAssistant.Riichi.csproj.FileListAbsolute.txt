@@ -1,0 +1,16 @@
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\bin\Release\net8.0\FFXIV.RiichiAssistant.Riichi.deps.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\bin\Release\net8.0\FFXIV.RiichiAssistant.Riichi.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\bin\Release\net8.0\FFXIV.RiichiAssistant.Riichi.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\bin\Release\net8.0\FFXIV.RiichiAssistant.Core.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\bin\Release\net8.0\FFXIV.RiichiAssistant.Core.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.csproj.AssemblyReference.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.AssemblyInfoInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.AssemblyInfo.cs
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.csproj.CoreCompileInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.sourcelink.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.Ri.8F417A18.Up2Date
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\refint\FFXIV.RiichiAssistant.Riichi.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\FFXIV.RiichiAssistant.Riichi.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Riichi\obj\Release\net8.0\ref\FFXIV.RiichiAssistant.Riichi.dll
