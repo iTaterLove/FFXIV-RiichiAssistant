@@ -3,7 +3,7 @@
     "Author": "iTaterLove",
     "Name": "FFXIV Riichi Assistant",
     "InternalName": "FFXIVRiichiAssistant",
-    "AssemblyVersion": "0.0.1.0",
+    "AssemblyVersion": "0.0.2",
     "Description": "Riichi Mahjong assistant for FFXIV using Dalamud: discard suggestions, call recommendations, and dora-aware scoring support.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/iTaterLove/FFXIV-RiichiAssistant",
