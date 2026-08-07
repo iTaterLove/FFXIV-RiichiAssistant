@@ -15,6 +15,13 @@ public sealed record PluginRuntimeState(
     PluginFrame Frame,
     IReadOnlyList<string> Warnings);
 
+public enum AssistantMode
+{
+    Off,
+    Hints,
+    AutoPlay,
+}
+
 public sealed class RiichiAssistantPlugin : IDalamudPlugin
 {
     private const string CommandName = "/riichiassistant";
@@ -25,11 +32,13 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
     private readonly IFramework framework;
     private readonly IPluginLog pluginLog;
     private readonly IRecommendationEngine recommendationEngine;
+    private readonly IStrategicPolicyEngine strategicPolicyEngine;
     private readonly IUiBuilder uiBuilder;
     private readonly IMahjongStateExtractor stateExtractor;
     private readonly PluginCoordinator coordinator;
     private DateTimeOffset lastUpdateUtc;
     private bool isDebugWindowOpen;
+    private AssistantMode assistantMode = AssistantMode.Hints;
     private int previewCallTypeIndex = Array.IndexOf(CallTypeLabels, nameof(CallType.Chi));
     private int previewShantenDelta;
     private float previewExpectedHanAfterCall = 1;
@@ -43,7 +52,7 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
     private bool previewUseRiichiExpectedValue;
     private float previewRiichiExpectedValue = 5200;
 
-    public RiichiAssistantPlugin(ICommandManager commandManager, IFramework framework, IGameGui gameGui, IPluginLog pluginLog, IUiBuilder uiBuilder)
+    public RiichiAssistantPlugin(ICommandManager commandManager, IFramework framework, IGameGui gameGui, IPluginLog pluginLog, IUiBuilder uiBuilder, IDalamudPluginInterface pluginInterface)
     {
         this.commandManager = commandManager;
         this.framework = framework;
@@ -51,11 +60,13 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
         this.uiBuilder = uiBuilder;
 
         var snapshotDecoder = new MahjongAddonSnapshotDecoder();
-        var uiSource = new DalamudMahjongUiSource(gameGui, snapshotDecoder);
+        var addonConfiguration = MahjongAddonConfigurationProvider.Load(pluginInterface, pluginLog);
+        var uiSource = new DalamudMahjongUiSource(gameGui, snapshotDecoder, addonConfiguration);
         var sessionDetector = new MahjongSessionDetector();
         stateExtractor = new MahjongStateExtractor(uiSource, sessionDetector);
         recommendationEngine = new RecommendationEngine();
-        coordinator = new PluginCoordinator(new RiichiAnalysisEngine(), recommendationEngine);
+        strategicPolicyEngine = new StrategicPolicyEngine(recommendationEngine, new ShantenSolver());
+        coordinator = new PluginCoordinator(new RiichiAnalysisEngine(), recommendationEngine, strategicPolicyEngine);
 
         commandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
@@ -141,12 +152,64 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
             return;
         }
 
+        DrawModePanel(CurrentState.Frame.SessionState);
         DrawOverview(CurrentState);
         DrawPlayers(CurrentState.ExtractedState.Snapshot);
         DrawWarnings(CurrentState.Warnings);
-        DrawRecommendations(CurrentState.Frame);
-        DrawCallPreview();
+        if (assistantMode == AssistantMode.Off)
+        {
+            ImGui.Separator();
+            ImGui.TextUnformatted("Assistant mode is Off. Solver recommendations are hidden.");
+        }
+        else
+        {
+            DrawRecommendations(CurrentState.Frame);
+            DrawStrategicSummary(CurrentState.Frame);
+            DrawCallPreview();
+
+            if (assistantMode == AssistantMode.AutoPlay)
+            {
+                ImGui.Separator();
+                ImGui.TextWrapped("Auto-play mode is reserved for future interaction wiring. The current build only provides hints and strategy guidance.");
+            }
+        }
+
         ImGui.End();
+    }
+
+    private void DrawModePanel(PluginSessionState sessionState)
+    {
+        ImGui.TextUnformatted("Mode");
+        ImGui.SameLine();
+        ImGui.TextUnformatted(sessionState == PluginSessionState.InRound ? "in match" : "idle");
+
+        DrawModeButton(AssistantMode.Off, "Off", "Do nothing");
+        ImGui.SameLine();
+        DrawModeButton(AssistantMode.Hints, "Hints", "Highlight best move");
+        ImGui.SameLine();
+        DrawModeButton(AssistantMode.AutoPlay, "Auto-play", "Reserved for future automation");
+        ImGui.Separator();
+    }
+
+    private void DrawModeButton(AssistantMode mode, string title, string description)
+    {
+        var isSelected = assistantMode == mode;
+        if (isSelected)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Button, 0xFF3A4A68);
+            ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0xFF4B5F85);
+            ImGui.PushStyleColor(ImGuiCol.ButtonActive, 0xFF5B739E);
+        }
+
+        if (ImGui.Button($"{title}\n{description}", new System.Numerics.Vector2(170, 48)))
+        {
+            assistantMode = mode;
+        }
+
+        if (isSelected)
+        {
+            ImGui.PopStyleColor(3);
+        }
     }
 
     private static void DrawOverview(PluginRuntimeState state)
@@ -206,16 +269,24 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
     private static void DrawRecommendations(PluginFrame frame)
     {
         ImGui.Separator();
-        ImGui.TextUnformatted("Top discards");
+        ImGui.TextUnformatted("Best move");
         if (frame.TopDiscards.Count == 0)
         {
             ImGui.TextUnformatted("No discard recommendations yet.");
         }
         else
         {
-            foreach (var recommendation in frame.TopDiscards)
+            var best = frame.TopDiscards[0];
+            ImGui.TextUnformatted($"Discard {best.Tile}");
+            ImGui.TextWrapped(best.Reason);
+
+            if (frame.TopDiscards.Count > 1)
             {
-                ImGui.BulletText($"{recommendation.Tile}: shanten {recommendation.ResultingShanten}, ukeire {recommendation.UkeireCount}, EV {recommendation.ExpectedValue:F0}");
+                ImGui.TextUnformatted("Alternatives");
+                foreach (var recommendation in frame.TopDiscards.Skip(1))
+                {
+                    ImGui.BulletText($"{recommendation.Tile}: shanten {recommendation.ResultingShanten}, ukeire {recommendation.UkeireCount}, EV {recommendation.ExpectedValue:F0}");
+                }
             }
         }
 
@@ -225,6 +296,21 @@ public sealed class RiichiAssistantPlugin : IDalamudPlugin
             ImGui.TextUnformatted($"Call: {frame.PendingCallRecommendation.CallType}");
             ImGui.TextWrapped(frame.PendingCallRecommendation.Reason);
         }
+    }
+
+    private static void DrawStrategicSummary(PluginFrame frame)
+    {
+        if (frame.Strategy is null)
+        {
+            return;
+        }
+
+        ImGui.Separator();
+        ImGui.TextUnformatted("Strategic posture");
+        ImGui.TextUnformatted($"Threat: {frame.Strategy.Threat.ThreatLevel} (riichi threats: {frame.Strategy.Threat.RiichiOpponents})");
+        ImGui.TextWrapped(frame.Strategy.Threat.Reason);
+        ImGui.TextUnformatted(frame.Strategy.ShouldPush ? "Plan: push" : "Plan: fold");
+        ImGui.TextWrapped(frame.Strategy.PushFoldReason);
     }
 
     private void DrawCallPreview()

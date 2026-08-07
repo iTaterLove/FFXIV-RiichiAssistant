@@ -57,3 +57,16 @@ Build and package the plugin zip from the repo root with:
 
 The script publishes the plugin project, writes a minimal plugin manifest alongside the binaries, and creates `artifacts/FFXIVRiichiAssistant.zip`.
 If `C:\Users\<you>\.dotnet\dotnet.exe` exists, the script prefers that local SDK automatically.
+
+## Mahjong Layout Profiles
+
+The plugin now loads Mahjong addon value-map profiles from a runtime JSON file so mappings can be changed without rebuilding.
+
+- File path: `Dalamud plugin config directory/mahjong-layout-profiles.json`
+- Default profile: `safe-fallback`
+- Included profile templates:
+  - `safe-fallback` (conservative no-index fallback)
+  - `manual-template` (editable index template for hand/discard/call fields)
+
+At startup, the plugin creates this file automatically if it does not exist.
+Switch `selectedProfile` in the JSON and restart the plugin to swap mappings.

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "FFXIV.RiichiAssistant.Core/0.0.1": {
+      "FFXIV.RiichiAssistant.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
@@ -12,11 +12,11 @@
           "bin/placeholder/FFXIV.RiichiAssistant.Core.dll": {}
         }
       },
-      "FFXIV.RiichiAssistant.Riichi/0.0.1": {
+      "FFXIV.RiichiAssistant.Riichi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "FFXIV.RiichiAssistant.Core": "0.0.1"
+          "FFXIV.RiichiAssistant.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FFXIV.RiichiAssistant.Riichi.dll": {}
@@ -28,12 +28,12 @@
     }
   },
   "libraries": {
-    "FFXIV.RiichiAssistant.Core/0.0.1": {
+    "FFXIV.RiichiAssistant.Core/1.0.0": {
       "type": "project",
       "path": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj",
       "msbuildProject": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj"
     },
-    "FFXIV.RiichiAssistant.Riichi/0.0.1": {
+    "FFXIV.RiichiAssistant.Riichi/1.0.0": {
       "type": "project",
       "path": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj",
       "msbuildProject": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj"
@@ -41,8 +41,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "FFXIV.RiichiAssistant.Core >= 0.0.1",
-      "FFXIV.RiichiAssistant.Riichi >= 0.0.1"
+      "FFXIV.RiichiAssistant.Core >= 1.0.0",
+      "FFXIV.RiichiAssistant.Riichi >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -50,7 +50,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.0.1",
+    "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Decision\\FFXIV.RiichiAssistant.Decision.csproj",
       "projectName": "FFXIV.RiichiAssistant.Decision",
@@ -71,6 +71,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -96,7 +97,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -112,26 +113,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.22, 8.0.22]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.22, 8.0.22]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.22, 8.0.22]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Aiden Carter\\.dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

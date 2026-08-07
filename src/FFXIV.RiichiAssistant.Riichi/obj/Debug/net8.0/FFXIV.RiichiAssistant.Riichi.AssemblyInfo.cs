@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FFXIV.RiichiAssistant.Riichi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5133f7ab83ef3c6f87c8416de225751fedbe657d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+197add31e67bcff8bca978bbcd2b7ae2b4b70236")]
 [assembly: System.Reflection.AssemblyProductAttribute("FFXIV.RiichiAssistant.Riichi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FFXIV.RiichiAssistant.Riichi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

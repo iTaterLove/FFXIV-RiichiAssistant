@@ -43,6 +43,13 @@ public enum CallType
     Tsumo,
 }
 
+public enum ThreatLevel
+{
+    Low,
+    Medium,
+    High,
+}
+
 public readonly record struct Tile(TileSuit Suit, int Rank, bool IsRed = false)
 {
     public bool IsHonor => Suit == TileSuit.Honor;

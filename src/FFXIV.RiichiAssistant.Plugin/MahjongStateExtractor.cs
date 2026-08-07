@@ -35,13 +35,25 @@ public sealed record MahjongAddonValueMap(
     int DoraCount = -1,
     IReadOnlyList<int>? ScoreIndices = null,
     IReadOnlyList<int>? RiichiFlagIndices = null,
-    IReadOnlyList<int>? DiscardCountIndices = null)
+    IReadOnlyList<int>? DiscardStartIndices = null,
+    IReadOnlyList<int>? DiscardCountIndices = null,
+    int PendingCallActive = -1,
+    int PendingCallType = -1,
+    int PendingCallTile = -1,
+    IReadOnlyList<int>? PendingCallCandidateStarts = null,
+    IReadOnlyList<int>? PendingCallCandidateCounts = null)
 {
     public IReadOnlyList<int> ScoreIndicesOrEmpty => ScoreIndices ?? Array.Empty<int>();
 
     public IReadOnlyList<int> RiichiFlagIndicesOrEmpty => RiichiFlagIndices ?? Array.Empty<int>();
 
+    public IReadOnlyList<int> DiscardStartIndicesOrEmpty => DiscardStartIndices ?? Array.Empty<int>();
+
     public IReadOnlyList<int> DiscardCountIndicesOrEmpty => DiscardCountIndices ?? Array.Empty<int>();
+
+    public IReadOnlyList<int> PendingCallCandidateStartsOrEmpty => PendingCallCandidateStarts ?? Array.Empty<int>();
+
+    public IReadOnlyList<int> PendingCallCandidateCountsOrEmpty => PendingCallCandidateCounts ?? Array.Empty<int>();
 }
 
 public sealed record MahjongAddonConfiguration(
@@ -302,6 +314,7 @@ public sealed unsafe class MahjongAddonSnapshotDecoder : IMahjongAddonSnapshotDe
         var honba = ReadInt(tableValues, infoValues, valueMap.Honba, 0, warningList);
         var riichiSticks = ReadInt(tableValues, infoValues, valueMap.RiichiSticks, 0, warningList);
         var players = ReadPlayers(tableValues, infoValues, valueMap, warningList);
+        var pendingCall = ReadPendingCallOpportunity(tableValues, infoValues, valueMap, hand, warningList);
 
         snapshot = new MahjongTableSnapshot(
             IsMahjongContentActive: true,
@@ -316,7 +329,8 @@ public sealed unsafe class MahjongAddonSnapshotDecoder : IMahjongAddonSnapshotDe
             Hand: hand,
             DoraIndicators: doraIndicators,
             VisibleTiles: visibleTiles,
-            Players: players);
+            Players: players,
+            PendingCallOpportunity: pendingCall);
         warnings = warningList;
         return true;
     }
@@ -328,18 +342,93 @@ public sealed unsafe class MahjongAddonSnapshotDecoder : IMahjongAddonSnapshotDe
         {
             var scoreIndex = playerIndex < valueMap.ScoreIndicesOrEmpty.Count ? valueMap.ScoreIndicesOrEmpty[playerIndex] : -1;
             var riichiIndex = playerIndex < valueMap.RiichiFlagIndicesOrEmpty.Count ? valueMap.RiichiFlagIndicesOrEmpty[playerIndex] : -1;
+            var discardStartIndex = playerIndex < valueMap.DiscardStartIndicesOrEmpty.Count ? valueMap.DiscardStartIndicesOrEmpty[playerIndex] : -1;
             var discardIndex = playerIndex < valueMap.DiscardCountIndicesOrEmpty.Count ? valueMap.DiscardCountIndicesOrEmpty[playerIndex] : -1;
+            var discardCount = ReadInt(tableValues, infoValues, discardIndex, 0, warnings);
+            var discards = ReadTileRange(tableValues, infoValues, discardStartIndex, discardCount, warnings, $"player {playerIndex} discard");
 
             players.Add(new PlayerSnapshot(
                 playerIndex,
                 ReadInt(tableValues, infoValues, scoreIndex, 25000, warnings),
                 ReadBool(tableValues, infoValues, riichiIndex, false, warnings),
-                ReadInt(tableValues, infoValues, discardIndex, 0, warnings),
-                Array.Empty<Tile>(),
+                discardCount,
+                discards,
                 Array.Empty<Meld>()));
         }
 
         return players;
+    }
+
+    private CallOpportunity? ReadPendingCallOpportunity(
+        ReadOnlySpan<AtkValue> tableValues,
+        ReadOnlySpan<AtkValue> infoValues,
+        MahjongAddonValueMap valueMap,
+        IReadOnlyList<Tile> hand,
+        List<string> warnings)
+    {
+        var hasExplicitActiveIndex = valueMap.PendingCallActive >= 0;
+        var rawType = ReadInt(tableValues, infoValues, valueMap.PendingCallType, -1, warnings);
+        var isPendingCallActive = hasExplicitActiveIndex
+            ? ReadBool(tableValues, infoValues, valueMap.PendingCallActive, false, warnings)
+            : rawType > 0;
+
+        if (!isPendingCallActive)
+        {
+            return null;
+        }
+
+        if (!TryDecodeCallType(rawType, out var callType))
+        {
+            warnings.Add($"Unknown pending call type value {rawType}; ignoring pending call opportunity.");
+            return null;
+        }
+
+        var rawTile = ReadInt(tableValues, infoValues, valueMap.PendingCallTile, -1, warnings);
+        if (!tileDecoder.TryDecode(rawTile, out var claimedTile))
+        {
+            warnings.Add($"Unable to decode pending call tile value {rawTile}; using a fallback tile for call policy evaluation.");
+            claimedTile = hand.FirstOrDefault();
+            if (Equals(claimedTile, default(Tile)))
+            {
+                claimedTile = new Tile(TileSuit.Honor, 1);
+            }
+        }
+
+        var candidateGroups = new List<IReadOnlyList<Tile>>();
+        for (var i = 0; i < Math.Min(valueMap.PendingCallCandidateStartsOrEmpty.Count, valueMap.PendingCallCandidateCountsOrEmpty.Count); i++)
+        {
+            var groupStart = valueMap.PendingCallCandidateStartsOrEmpty[i];
+            var groupCountIndex = valueMap.PendingCallCandidateCountsOrEmpty[i];
+            var group = ReadTiles(tableValues, infoValues, groupStart, groupCountIndex, warnings);
+            if (group.Count > 0)
+            {
+                candidateGroups.Add(group);
+            }
+        }
+
+        return new CallOpportunity(callType, claimedTile, candidateGroups.ToArray());
+    }
+
+    private static bool TryDecodeCallType(int rawType, out CallType callType)
+    {
+        if (Enum.IsDefined(typeof(CallType), rawType))
+        {
+            callType = (CallType)rawType;
+            return true;
+        }
+
+        callType = rawType switch
+        {
+            1 => CallType.Chi,
+            2 => CallType.Pon,
+            3 => CallType.Kan,
+            4 => CallType.Riichi,
+            5 => CallType.Ron,
+            6 => CallType.Tsumo,
+            _ => default,
+        };
+
+        return rawType is >= 1 and <= 6;
     }
 
     private IReadOnlyList<Tile> ReadTiles(ReadOnlySpan<AtkValue> primary, ReadOnlySpan<AtkValue> secondary, int startIndex, int countIndex, List<string> warnings)
@@ -368,6 +457,41 @@ public sealed unsafe class MahjongAddonSnapshotDecoder : IMahjongAddonSnapshotDe
             if (!tileDecoder.TryDecode(rawTile, out var tile))
             {
                 warnings.Add($"Unrecognized Mahjong tile code {rawTile} at value index {startIndex + offset}.");
+                continue;
+            }
+
+            tiles.Add(tile);
+        }
+
+        return tiles;
+    }
+
+    private IReadOnlyList<Tile> ReadTileRange(
+        ReadOnlySpan<AtkValue> primary,
+        ReadOnlySpan<AtkValue> secondary,
+        int startIndex,
+        int count,
+        List<string> warnings,
+        string label)
+    {
+        if (startIndex < 0 || count <= 0)
+        {
+            return Array.Empty<Tile>();
+        }
+
+        var tiles = new List<Tile>(count);
+        for (var offset = 0; offset < count; offset++)
+        {
+            if (!TryGetValue(primary, secondary, startIndex + offset, out var value))
+            {
+                warnings.Add($"Missing AtkValue for Mahjong {label} index {startIndex + offset}.");
+                continue;
+            }
+
+            var rawTile = ReadInt(value, warnings);
+            if (!tileDecoder.TryDecode(rawTile, out var tile))
+            {
+                warnings.Add($"Unrecognized Mahjong tile code {rawTile} at {label} index {startIndex + offset}.");
                 continue;
             }
 
