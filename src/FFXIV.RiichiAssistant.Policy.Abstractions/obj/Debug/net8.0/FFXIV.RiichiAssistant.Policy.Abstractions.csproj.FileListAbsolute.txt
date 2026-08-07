@@ -1,0 +1,16 @@
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\bin\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.deps.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\bin\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\bin\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\bin\Debug\net8.0\FFXIV.RiichiAssistant.Core.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\bin\Debug\net8.0\FFXIV.RiichiAssistant.Core.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.csproj.AssemblyReference.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.AssemblyInfoInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.AssemblyInfo.cs
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.sourcelink.json
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.Ri.838EA86C.Up2Date
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\refint\FFXIV.RiichiAssistant.Policy.Abstractions.dll
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\FFXIV.RiichiAssistant.Policy.Abstractions.pdb
+C:\Users\Aiden Carter\Documents\GitHub\FFXIV-RiichiAssistant\src\FFXIV.RiichiAssistant.Policy.Abstractions\obj\Debug\net8.0\ref\FFXIV.RiichiAssistant.Policy.Abstractions.dll

@@ -1,5 +1,7 @@
 # FFXIV-RiichiAssistant
 
+![FFXIV RiichiAssistant Logo](docs/assets/logo.png)
+
 Dalamud plugin repository and plugin source scaffold for a Final Fantasy XIV Riichi Mahjong assistant plugin.
 
 ## Goal

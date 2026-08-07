@@ -4,6 +4,9 @@
     <ProjectReference Include="..\FFXIV.RiichiAssistant.Core\FFXIV.RiichiAssistant.Core.csproj" />
     <ProjectReference Include="..\FFXIV.RiichiAssistant.Riichi\FFXIV.RiichiAssistant.Riichi.csproj" />
     <ProjectReference Include="..\FFXIV.RiichiAssistant.Decision\FFXIV.RiichiAssistant.Decision.csproj" />
+    <ProjectReference Include="..\FFXIV.RiichiAssistant.Policy.Abstractions\FFXIV.RiichiAssistant.Policy.Abstractions.csproj" />
+    <ProjectReference Include="..\FFXIV.RiichiAssistant.Policy\FFXIV.RiichiAssistant.Policy.csproj" />
+    <ProjectReference Include="..\FFXIV.RiichiAssistant.Plugin.Game\FFXIV.RiichiAssistant.Plugin.Game.csproj" />
   </ItemGroup>
 
   <ItemGroup>

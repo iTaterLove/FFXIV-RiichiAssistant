@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FFXIV.RiichiAssistant.Decision")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+197add31e67bcff8bca978bbcd2b7ae2b4b70236")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dc8f3186219179f7af23b14b0f6ce76adb6536e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FFXIV.RiichiAssistant.Decision")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FFXIV.RiichiAssistant.Decision")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

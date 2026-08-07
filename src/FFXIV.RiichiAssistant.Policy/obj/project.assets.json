@@ -1,0 +1,166 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "FFXIV.RiichiAssistant.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Core.dll": {}
+        }
+      },
+      "FFXIV.RiichiAssistant.Decision/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FFXIV.RiichiAssistant.Core": "1.0.0",
+          "FFXIV.RiichiAssistant.Riichi": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Decision.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Decision.dll": {}
+        }
+      },
+      "FFXIV.RiichiAssistant.Policy.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FFXIV.RiichiAssistant.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Policy.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Policy.Abstractions.dll": {}
+        }
+      },
+      "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FFXIV.RiichiAssistant.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Riichi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FFXIV.RiichiAssistant.Riichi.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FFXIV.RiichiAssistant.Core/1.0.0": {
+      "type": "project",
+      "path": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj",
+      "msbuildProject": "../FFXIV.RiichiAssistant.Core/FFXIV.RiichiAssistant.Core.csproj"
+    },
+    "FFXIV.RiichiAssistant.Decision/1.0.0": {
+      "type": "project",
+      "path": "../FFXIV.RiichiAssistant.Decision/FFXIV.RiichiAssistant.Decision.csproj",
+      "msbuildProject": "../FFXIV.RiichiAssistant.Decision/FFXIV.RiichiAssistant.Decision.csproj"
+    },
+    "FFXIV.RiichiAssistant.Policy.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../FFXIV.RiichiAssistant.Policy.Abstractions/FFXIV.RiichiAssistant.Policy.Abstractions.csproj",
+      "msbuildProject": "../FFXIV.RiichiAssistant.Policy.Abstractions/FFXIV.RiichiAssistant.Policy.Abstractions.csproj"
+    },
+    "FFXIV.RiichiAssistant.Riichi/1.0.0": {
+      "type": "project",
+      "path": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj",
+      "msbuildProject": "../FFXIV.RiichiAssistant.Riichi/FFXIV.RiichiAssistant.Riichi.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "FFXIV.RiichiAssistant.Core >= 1.0.0",
+      "FFXIV.RiichiAssistant.Decision >= 1.0.0",
+      "FFXIV.RiichiAssistant.Policy.Abstractions >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Aiden Carter\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Policy\\FFXIV.RiichiAssistant.Policy.csproj",
+      "projectName": "FFXIV.RiichiAssistant.Policy",
+      "projectPath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Policy\\FFXIV.RiichiAssistant.Policy.csproj",
+      "packagesPath": "C:\\Users\\Aiden Carter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Policy\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Aiden Carter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Core\\FFXIV.RiichiAssistant.Core.csproj": {
+              "projectPath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Core\\FFXIV.RiichiAssistant.Core.csproj"
+            },
+            "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Decision\\FFXIV.RiichiAssistant.Decision.csproj": {
+              "projectPath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Decision\\FFXIV.RiichiAssistant.Decision.csproj"
+            },
+            "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Policy.Abstractions\\FFXIV.RiichiAssistant.Policy.Abstractions.csproj": {
+              "projectPath": "C:\\Users\\Aiden Carter\\Documents\\GitHub\\FFXIV-RiichiAssistant\\src\\FFXIV.RiichiAssistant.Policy.Abstractions\\FFXIV.RiichiAssistant.Policy.Abstractions.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
